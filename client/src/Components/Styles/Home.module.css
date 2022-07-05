@@ -1,6 +1,6 @@
 .conteiner {
     
-    height: 100vh;
+    height: auto;
     width: 100%;
     
 }
@@ -35,7 +35,7 @@
     background-color: rgb(240, 255, 255);
     height: auto;
     width:20%;
-    overflow: hidden;
+    overflow: auto;
     border: solid 1px rgb(11, 91, 167);
     display: flex;
     flex-direction: column;
@@ -65,10 +65,10 @@
 }
 
 .show{
-    height: 100vh;
+    height: auto;
     width: 80%;
     border: solid 1px rgb(11, 91, 167);
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .group{

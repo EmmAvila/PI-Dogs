@@ -33,10 +33,11 @@ export default function Home(){
         dispatch(getTempers())
     },[dispatch]) // [] -> component didmount
     
-    function handleClick(event){//Traer todos los perros
-        event.preventDefault();
-        dispatch(getDogs())
-    }
+    // function handleClick(event){//Traer todos los perros
+    //     event.preventDefault();
+    //     dispatch(getDogs())
+    //     setOrder(`${event.target.value}`)
+    // }
 
     function handleFilterByTemper(event){
         event.preventDefault();
@@ -128,11 +129,11 @@ export default function Home(){
                     </select>
 
                     <Link to='/create'><button className={s.btn}>Create</button> </Link>
-
-                    </div>
+                    {/* <button className={s.btn} onClick={(event) => handleClick(event)}> Recargar personajes </button> */}
+                    </div> 
                     
                 </div>
-                {/* <button onClick={(event) => handleClick(event)}> Recargar personajes </button> */}
+                
                 {/* searchbar */}
                 <div className={s.show}>
                         {/* Paginacion */}

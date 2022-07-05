@@ -12,10 +12,10 @@
 }
 
 .tittle{
-    
+    background-color: rgba(157, 229, 214, 0.767)   ;
     color: rgb(11, 91, 167);
     font-size: 40px;;   
-    height: fit-content;
+    height: auto;
     margin-bottom: 5px;
     margin-top: 10;
 }
@@ -40,7 +40,7 @@
 }
 
 .input{
-    width: 300px;
+    width: 100%;
     height: 25px;
     /* margin: 10px 0 20px 20px; */
     /* box-sizing: border-box; */
@@ -48,12 +48,13 @@
 }
 .name{
     width: 100%;
+    margin-bottom: 0;
     /* border: solid 1px rgb(167, 11, 11);
     background-color: rgb(90, 175, 175); */
 }
 
 .fields{
-    width: fit-content;
+    width: 80%;
     /* border: solid 1px rgb(167, 11, 11); */
     background-color: rgb(173, 226, 226);
     display: flex;
@@ -64,7 +65,7 @@
 
 
 
-.select{
+.select {
     width: 50%;
     box-sizing: border-box;
     text-align: left;
@@ -76,8 +77,19 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 18px;
-    
-    
+}
+.selectTemp{
+    width: 50%;
+    box-sizing: border-box;
+    text-align: left;
+    color: rgb(56, 56, 66);
+    padding: 5px;
+    margin: 8px; 
+    margin-top: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
 }
 
 ul {

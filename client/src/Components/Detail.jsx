@@ -17,7 +17,7 @@ export default function Detail(){
     
     useEffect(() => {
       dispatch(getDetail(id))  
-    },[dispatch])
+    },[dispatch,id])
 
     return(
         <div className={s.conteiner}>
