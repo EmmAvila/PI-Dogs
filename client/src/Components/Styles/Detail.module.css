@@ -1,0 +1,84 @@
+.img{
+    width: 650px; 
+    height: 450px;
+    border-radius: 10px;
+}
+
+.conteiner {
+    
+    background-image: url("https://media.istockphoto.com/vectors/dog-paw-seamless-pattern-vector-bone-french-bulldog-footprint-cartoon-vector-id1067489046?k=20&m=1067489046&s=170667a&w=0&h=eX_gvMxr-z3yq4ye-lGjBp2tGSNvIDBxugnlVHuhoqw=");
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px;
+}
+
+.infoConteiner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 25px;
+    color: rgb(7, 81, 150);
+    background-color: rgba(240, 255, 255, 0.829);
+    border-radius: 10px;
+}
+
+.info{
+    margin: 2px ;
+    
+    
+}
+.temper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 25px;
+    color: rgb(11, 91, 167);
+    background-color: rgba(240, 255, 255, 0.829);
+    border-radius: 10px;
+}
+
+.tittle{
+    background-color: rgba(240, 255, 255, 0.829);
+    color: rgb(3, 23, 112);
+    font-size: 40px;;   
+    height: fit-content;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+b {
+    color: rgb(3, 23, 112)
+}
+
+.btn {
+    border-radius: 4px;
+    color: rgb(11, 91, 167);
+    border: solid 1px rgb(11, 91, 167) ;
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    margin: 0px;
+    width: auto;
+    height: auto;
+    padding: 3px;
+    transition: all 0.5s;
+    cursor: default;
+    margin: 5px;
+    
+}
+
+.btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(11, 91, 167);
+    transform: scale(1.1);
+    
+    cursor: default;
+} 

@@ -1,0 +1,118 @@
+.conteiner {
+    background-image: url("https://media.istockphoto.com/vectors/dog-paw-seamless-pattern-vector-bone-french-bulldog-footprint-cartoon-vector-id1067489046?k=20&m=1067489046&s=170667a&w=0&h=eX_gvMxr-z3yq4ye-lGjBp2tGSNvIDBxugnlVHuhoqw=");
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    justify-items: center;
+}
+
+.tittle{
+    
+    color: rgb(11, 91, 167);
+    font-size: 40px;;   
+    height: fit-content;
+    margin-bottom: 5px;
+    margin-top: 10;
+}
+
+.formConteiner{
+    background-color: rgba(157, 229, 214, 0.767)   ;
+    height: auto;
+    width:35%;
+    border-radius: 10px;
+    margin-top: 10px;
+    /* display: flex; */
+    /*flex-direction: column; */
+    /* justify-content:left; */
+    /* align-items: center;     */
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input{
+    width: 300px;
+    height: 25px;
+    /* margin: 10px 0 20px 20px; */
+    /* box-sizing: border-box; */
+    
+}
+.name{
+    width: 100%;
+    /* border: solid 1px rgb(167, 11, 11);
+    background-color: rgb(90, 175, 175); */
+}
+
+.fields{
+    width: fit-content;
+    /* border: solid 1px rgb(167, 11, 11); */
+    background-color: rgb(173, 226, 226);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content:space-evenly;
+}
+
+
+
+.select{
+    width: 50%;
+    box-sizing: border-box;
+    text-align: left;
+    color: rgb(56, 56, 66);
+    padding: 5px;
+    margin: 8px; 
+    margin-top: 50px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    
+    
+}
+
+ul {
+    list-style: none;
+    margin: 2px;
+}
+
+.btn {
+    border-radius: 4px;
+    color: rgb(11, 91, 167);
+    border: solid 1px rgb(11, 91, 167) ;
+    background-color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+    margin: 0px;
+    width: auto;
+    height: auto;
+    padding: 3px;
+    transition: all 0.5s;
+    cursor: default;
+    margin: 5px;
+    
+}
+
+.btn:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(11, 91, 167);
+    transform: scale(1.1);
+    margin: 0px;
+    cursor: default;
+} 
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly ;
+}
