@@ -114,13 +114,13 @@ export default function CreateDog(){
                     <div>
                     <label htmlFor="">Weight (min) </label>
                     <br />
-                    <input className={s.input} type="number" value={input.weight_min} name='weight_min' onChange={event =>handleChange(event)}
+                    <input className={s.input} type="text" value={input.weight_min} name='weight_min' onChange={event =>handleChange(event)}
                     placeholder="Enter a number"/>
                     <br />
                     {error.weight_min? <p>  {error.weight_min}</p> : null}
                     <label  htmlFor="">Weight (max)</label>
                     <br />
-                    <input className={s.input} type="number" value={input.weight_max} name='weight_max' onChange={event =>handleChange(event)}
+                    <input className={s.input} type="text" value={input.weight_max} name='weight_max' onChange={event =>handleChange(event)}
                     placeholder="Enter a number"/>
                     <br />
                     {error.weight_max? <p>  {error.weight_max}</p> : null}
@@ -136,13 +136,13 @@ export default function CreateDog(){
                     <div>
                     <label className={s.input} htmlFor="">Height (min) </label>
                     <br />
-                    <input className={s.input} type="number" value={input.height_min} name='height_min' onChange={event =>handleChange(event)}
+                    <input className={s.input} type="text" value={input.height_min} name='height_min' onChange={event =>handleChange(event)}
                     placeholder="Enter a number"/>
                     <br />
                     {error.height_min? <p>  {error.height_min}</p> : null}
                     <label htmlFor="">Height (max)</label>
                     <br />
-                    <input className={s.input} type="number" value={input.height_max} name='height_max' onChange={event =>handleChange(event)}
+                    <input className={s.input} type="text" value={input.height_max} name='height_max' onChange={event =>handleChange(event)}
                     placeholder="Enter a number"/>
                     <br />
                     {error.height_max? <p>  {error.height_max}</p> : null}
@@ -154,7 +154,7 @@ export default function CreateDog(){
                 <div className={s.fields}>
                     <label  htmlFor="">LifeSpan</label>
                     <br />
-                    <input className={s.input} type="number" value={input.lifeSpan} name='lifeSpan' onChange={event =>handleChange(event)}
+                    <input className={s.input} type="text" value={input.lifeSpan} name='lifeSpan' onChange={event =>handleChange(event)}
                     placeholder="Enter a number"/>
                     {error.lifeSpan? <p>  {error.lifeSpan}</p> : null}
                 </div>
@@ -181,9 +181,9 @@ export default function CreateDog(){
                 </ul>
                 {error.temperament? <span>  {error.temperament}</span> : null}
                 <div className={s.buttons}>
-                {Object.keys(error).length > 0? 
-                <Link to= '/home'><button className={s.btn} >Volver a Pagina Principal</button></Link>
-                :<button className={s.btn} type="submit">Crear</button> }
+                {Object.keys(error).length > 0? null
+                :<button className={s.btn} type="submit">Create</button> }
+                <Link to= '/home'><button className={s.btn} >Home</button></Link>
                 
 
                 </div>

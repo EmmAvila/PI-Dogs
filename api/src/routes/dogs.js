@@ -43,14 +43,7 @@ router.get('/:id', async (req, res, next) => {
             console.log(Array.isArray(data))
             data.forEach(r => {
                if(r.id === id){
-                // found = {
-                //     name: r.name,
-                //     weight: r.weight.metric,
-                //     lifeSpan: r.life_span,
-                //     image: r.image.url, 
-                //     temperament: r.temperament,
-                //     id: r.id,
-                // } 
+                
                 found = {
                   id: r.id,
                   name: r.name,
@@ -88,9 +81,9 @@ router.get('/:id', async (req, res, next) => {
 
 // crea una raza
 router.post('/', async (req, res, next) => {
-    const { name, height_min, weight_min, lifeSpan, temperament} = req.body
+    const { name, height_min, height_max, weight_min, weight_max, lifeSpan, temperament} = req.body
     // console.log( name, height, weight, lifeSpan)
-    if(!name || !height_min || !weight_min) res.status(400).send('datos incorrectos')
+    if(!name || !height_min || !height_max || !weight_max || !weight_min || !lifeSpan || temperament.length<1) return res.status(400).send('datos incorrectos')
     try{
       let newRace = await Race.create(req.body);
       let temper = await Temper.findAll({
@@ -98,7 +91,7 @@ router.post('/', async (req, res, next) => {
           name: temperament
         }
       })
-      console.log(temper.dataValues)
+      // console.log(temper.dataValues)
       
       newRace.addTemper(temper)
       res.send('se creo la raza: ' + newRace.name)
