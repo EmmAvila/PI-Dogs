@@ -67,7 +67,7 @@ let getRaces = (req, res, next) => {
 
           }
         })
-        console.log(formRaces)
+        // console.log(formRaces)
         if(formRaces.length > 0) formRaces.forEach(r => {
           // console.log(r.dataValues)
           racesApi.push(r)});

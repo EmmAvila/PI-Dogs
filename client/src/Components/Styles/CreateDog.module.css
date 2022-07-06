@@ -95,6 +95,7 @@
 ul {
     list-style: none;
     margin: 2px;
+    
 }
 
 .btn {
@@ -127,4 +128,26 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content:space-evenly ;
+}
+
+.delete{
+    border-radius: 2px;
+    color: rgb(255, 0, 0);
+    border: solid 1px rgb(255, 0, 0) ;
+    background-color: #fafafa;
+    text-align: center;
+    font-size: 10px;
+    padding: 0px;
+    width: 15px;
+    height: 15px;
+    cursor: default;
+    margin: 0px;
+}
+
+.temp{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style: none;
+    flex-wrap: wrap;
 }

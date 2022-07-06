@@ -6,6 +6,7 @@ import s from './Styles/CreateDog.module.css'
 
 function validate(input) {
     let errors = {};
+    console.log('entro', input.temperament)
 
     if(!/^[A-Za-z0-9\s]+$/g.test(input.name)) errors.name = '❌ Only letter or number allowed';
    
@@ -92,6 +93,19 @@ export default function CreateDog(){
             alert('All fields with (*) must be filled')
         }
     }
+
+    function handleDelete(el){
+        console.log(el.target.value)
+        let filtrado = input.temperament.filter(temp => temp !== el.target.value)
+        setError(validate({
+            ...input,
+            temperament: filtrado
+        }))
+        setInput({
+            ...input,
+            temperament: filtrado
+        })
+    }
    
     return (
         <div className={s.conteiner}>
@@ -168,17 +182,24 @@ export default function CreateDog(){
                 </div>
                     <h2>* Temperaments</h2>
                 <select className={s.selectTemp}  name='temperament' onChange={event => handleSelect(event)}>
-                    {/* <option value="adorable" key='555555'>adorable</option>
-                    <option value="adorable" key='555554'>abominable</option> */}
+                   
                     {temperaments && temperaments.map((temp) => (
                     <option key={temp.id} value={temp.name}>
                         {temp.name}
                     </option>
                     ))} 
                 </select>
-                <ul>
-                    <li>{input.temperament.map(temp => <span>{temp}, </span>)}</li>
-                </ul>
+                
+                {/* {input.temperament.map(temp => {
+                    
+                      return  <><span>{temp}</span>
+                                <button>x</button>
+                      </>
+                            
+                    
+                })} */}
+
+
                 {error.temperament? <span>  {error.temperament}</span> : null}
                 <div className={s.buttons}>
                 {Object.keys(error).length > 0? null
@@ -190,6 +211,16 @@ export default function CreateDog(){
             
                 
               </form>
+              <ul className={s.temp}>
+                    {input.temperament.map(temp =>{
+                     return <li>
+                        <button className={s.delete} value={temp} onClick={(el) => handleDelete(el)}>x</button>
+                        <span>{temp}, </span>
+                        </li> 
+                    
+                    })}
+                    
+                </ul>
             </div>
 
         </div>

@@ -15,7 +15,7 @@ router.get('/',getRaces)
 //get detalle raza
 router.get('/:id', async (req, res, next) => {
     let id = req.params.id
-    console.log(typeof id)
+    // console.log(typeof id)
     let found
     try{
         if(id.length > 8) {
@@ -40,7 +40,7 @@ router.get('/:id', async (req, res, next) => {
         }else{
             id = parseInt(req.params.id)
             let {data} = await axios.get(`https://api.thedogapi.com/v1/breeds${API_LIMIT}`)
-            console.log(Array.isArray(data))
+            // console.log(Array.isArray(data))
             data.forEach(r => {
                if(r.id === id){
                 
@@ -98,24 +98,8 @@ router.post('/', async (req, res, next) => {
     }catch(err){
       res.status(400).send('ya existe la raza')
     }
-
-
-
-
-
-    // try{
-    //    Race.create({ name, height, weight, lifeSpan}).then((race) =>
-    //    res.send('se creo la raza: ' + race.name))
-    //    .catch(() => res.status(400).send('ya existe la raza')) //err
-    // }catch(err){
-        
-    //     next(err)
-    // }
 })
 
-/* router.('', (req, res, next) => {
-
-}) */
 
 
 

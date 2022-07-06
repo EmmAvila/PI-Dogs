@@ -8,12 +8,7 @@ let tempersApi= [];
 async function temperDb() {
     try {
       const {data} =  await axios.get(`https://api.thedogapi.com/v1/breeds${API_LIMIT}`);
-      //-----Probando cosas
-      // let i=0;
-      // data.forEach(element => {
-      //   i++,
-      //   console.log(`${i}`, element.weight.metric, typeof element.weight.metric)
-      // });
+      
       // mejorar esta parte - A
       data.forEach(raza => {
         if(raza.temperament){
