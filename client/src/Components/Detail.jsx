@@ -16,8 +16,16 @@ export default function Detail(){
     let dispatch = useDispatch()
     
     useEffect(() => {
-      dispatch(getDetail(id))  
+        console.log('did')
+        
+      dispatch(getDetail(id))
+        
     },[dispatch,id])
+
+    useEffect(() => {
+        console.log('will')
+        return () => dispatch(getDetail())
+    },[dispatch])
 
     return(
         <div className={s.conteiner}>

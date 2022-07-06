@@ -28,16 +28,16 @@ export default function Home(){
     let dispatch = useDispatch()
 
     useEffect(() =>{
-        
-        dispatch(getDogs())
-        dispatch(getTempers())
+        console.log(dogs)
+        dispatch(() => dogs.length <1? getDogs(): null)
+        // dispatch(getTempers())
     },[dispatch]) // [] -> component didmount
     
-    // function handleClick(event){//Traer todos los perros
-    //     event.preventDefault();
-    //     dispatch(getDogs())
+    function handleClick(event){//Traer todos los perros
+        event.preventDefault();
+        dispatch(getDogs())
     //     setOrder(`${event.target.value}`)
-    // }
+    }
 
     function handleFilterByTemper(event){
         event.preventDefault();
@@ -129,7 +129,7 @@ export default function Home(){
                     </select>
 
                     <Link to='/create'><button className={s.btn}>Create</button> </Link>
-                    {/* <button className={s.btn} onClick={(event) => handleClick(event)}> Recargar personajes </button> */}
+                    <button className={s.btn} onClick={(event) => handleClick(event)}> Reload Dogs </button>
                     </div> 
                     
                 </div>

@@ -213,7 +213,7 @@ export default function CreateDog(){
               </form>
               <ul className={s.temp}>
                     {input.temperament.map(temp =>{
-                     return <li>
+                     return <li key={temp}>
                         <button className={s.delete} value={temp} onClick={(el) => handleDelete(el)}>x</button>
                         <span>{temp}, </span>
                         </li> 

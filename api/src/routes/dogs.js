@@ -29,10 +29,10 @@ router.get('/:id', async (req, res, next) => {
               }
             }
           }) 
-          found.dataValues.image = found.dataValues.image? found.dataValues.image:'https://www.sopitas.com/wp-content/uploads/2017/01/snuffles-rick-and-morty.jpg?w=800'
           
-         
+          
           if(found) {
+            found.dataValues.image = found.dataValues.image? found.dataValues.image:'https://www.sopitas.com/wp-content/uploads/2017/01/snuffles-rick-and-morty.jpg?w=800'
             res.json(found)}
           else{
             throw new Error('Error en id')

@@ -4,7 +4,8 @@ const initialState = {
     temperaments: [], //solo para opciones en el selector de temperamentos
     dogs: [],//estado para mostrar en area de home
     allDogs:[], //auxiliar para filtrados
-    detail: {}
+    detail: {},
+    filtered: []
 }
 
 export default function reducer(state = initialState, action){
@@ -13,7 +14,8 @@ export default function reducer(state = initialState, action){
             return {
                 ...state, 
                 dogs: action.payload,
-                allDogs: action.payload
+                allDogs: action.payload,
+                filtered: action.payload
             }
 
         case 'GET_TEMPERS':
@@ -23,20 +25,21 @@ export default function reducer(state = initialState, action){
             }
 
         case 'FILTER_BY_TEMPER':
-            let temperFiltered = action.payload === 'All' ? state.allDogs 
+            let temperFiltered = action.payload === 'All' ? state.allDogs
             : state.allDogs.filter((dog) => dog.temperament.split(', ').includes(action.payload))
 
             return{
                 ...state,
-                dogs: temperFiltered
+                dogs: temperFiltered,
+                filtered: temperFiltered
             }
 
         case 'FILTER_ORIGIN':
             let originFiltered = [];
             console.log('Action', action.payload)
-            if(action.payload === 'All') originFiltered = state.allDogs
-            if(action.payload === "Api") originFiltered = state.allDogs.filter((dog) => typeof(dog.id) === "number")
-            if(action.payload === "Created") originFiltered = state.allDogs.filter((dog) => typeof(dog.id) === "string")
+            if(action.payload === 'All') originFiltered = state.filtered
+            if(action.payload === "Api") originFiltered = state.filtered.filter((dog) => typeof(dog.id) === "number")
+            if(action.payload === "Created") originFiltered = state.filtered.filter((dog) => typeof(dog.id) === "string")
             console.log(originFiltered)
             return{
                 ...state,
@@ -86,7 +89,9 @@ export default function reducer(state = initialState, action){
             case 'GET_BY_RACE':
             return {
                 ...state,
-                dogs: action.payload
+                dogs: action.payload,
+                allDogs: action.payload,
+                filtered: action.payload
             }
                 
             case 'POST_DOG':

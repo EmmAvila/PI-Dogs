@@ -84,6 +84,12 @@ export function postDog(data){
 
 
 export function getDetail(id){
+    if(!id) {
+        return{
+            type: 'GET_DETAIL',
+            payload: {}
+        }
+    }
     return async function(dispatch){
         try{
             let dog = (await axios.get(`http://localhost:3001/api/dogs/${id}`)).data
