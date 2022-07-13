@@ -27,11 +27,10 @@ export default function Home(){
 
     let dispatch = useDispatch()
 
-    useEffect(() =>{
-        console.log(dogs)
-        dispatch(() => dogs.length <1? getDogs(): null)
-        // dispatch(getTempers())
-    },[dispatch]) // [] -> component didmount
+    if(dogs.length<1 && tempers.length<1) {
+        dispatch(getDogs())
+        dispatch(getTempers())
+    } // [] -> component didmount
     
     function handleClick(event){//Traer todos los perros
         event.preventDefault();
@@ -75,7 +74,7 @@ export default function Home(){
                 <ul className={s.navbar}>
                     <li><img className={s.icon} src="https://cdn-icons-png.flaticon.com/512/91/91544.png" alt="icono" /></li>
                     <li><h1>Dogos</h1></li>
-                    <li><SearchBar/></li>
+                    <li><SearchBar paginado={paginado}/></li>
                     
                 </ul>
             </div>
@@ -129,7 +128,7 @@ export default function Home(){
                     </select>
 
                     <Link to='/create'><button className={s.btn}>Create</button> </Link>
-                    <button className={s.btn} onClick={(event) => handleClick(event)}> Reload Dogs </button>
+                    <button className={s.btn} onClick={(event) => handleClick(event)}> Reload Dogs</button>
                     </div> 
                     
                 </div>

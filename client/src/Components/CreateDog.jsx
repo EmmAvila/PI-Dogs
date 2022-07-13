@@ -61,16 +61,22 @@ export default function CreateDog(){
     }
 
     function handleSelect(event){
-      
-        setInput({
-            ...input,
-            temperament: [...input.temperament, event.target.value]
-        })
+        let exist = input.temperament.find(temp => temp === event.target.value)
+        if(!exist){
+            setInput({
+                ...input,
+                temperament: [...input.temperament, event.target.value]
+            })
+    
+            setError(validate({
+                ...input,
+                temperament: [...input.temperament, event.target.value]
+            }))
 
-        setError(validate({
-            ...input,
-            temperament: [...input.temperament, event.target.value]
-        }))
+        }else{
+            alert('El temperamento ya esta elegido')
+        }
+
     }
 
     function handleSubmit(event){

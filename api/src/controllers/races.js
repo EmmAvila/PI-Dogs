@@ -50,7 +50,7 @@ let getRaces = (req, res, next) => {
           let temp = r.Tempers.map(t => t.name).join(', ')
           return {
             name: r.name,
-
+            creadoPorEmmanuel: r.creadoPorEmmanuel,
             weight_min: r.weight_min,
 
             weight_max: r.weight_max,
