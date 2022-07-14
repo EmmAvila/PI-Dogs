@@ -22,9 +22,10 @@ const { temperDb } = require('./src/controllers/temperaments.js');
 const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   temperDb();
-  server.listen(3001, () => {
+  console.log(process.env.PORT)
+  server.listen(process.env.PORT, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
 });

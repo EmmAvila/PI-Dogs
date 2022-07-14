@@ -6,7 +6,7 @@ import axios from 'axios'
 export  function getDogs(){
     return  async function(dispatch){
         try{
-            let dogs = (await axios.get(`http://localhost:3001/api/dogs`)).data
+            let dogs = (await axios.get(`/api/dogs`)).data
             dispatch({
               type: 'GET_DOGS',
               payload: dogs
@@ -20,7 +20,8 @@ export  function getDogs(){
 export  function getTempers(){ //para rellenar las opciones en el filtro por temperamento
     return  async function(dispatch){
         try{
-            let temperaments = (await axios.get(`http://localhost:3001/api/temperament`)).data
+            
+            let temperaments = (await axios.get(`/api/temperament`)).data
             dispatch({
               type: 'GET_TEMPERS',
               payload: temperaments
@@ -62,7 +63,7 @@ export function orderByWeight(order){ //wehitasc
 export function getByRace(name){
     return async function(dispatch){
         try{
-            let races = (await axios.get(`http://localhost:3001/api/dogs?name=${name}`)).data
+            let races = (await axios.get(`/api/dogs?name=${name}`)).data
             dispatch({
               type: 'GET_BY_RACE',
               payload: races
@@ -75,7 +76,7 @@ export function getByRace(name){
 
 export function postDog(data){
     return function(dispatch){
-     let created = axios.post('http://localhost:3001/api/dogs', data)
+     let created = axios.post('/api/dogs', data)
      console.log(created)
      return created 
     }
@@ -92,7 +93,7 @@ export function getDetail(id){
     }
     return async function(dispatch){
         try{
-            let dog = (await axios.get(`http://localhost:3001/api/dogs/${id}`)).data
+            let dog = (await axios.get(`/api/dogs/${id}`)).data
             dispatch({
               type: 'GET_DETAIL',
               payload: dog
@@ -103,16 +104,3 @@ export function getDetail(id){
     }
 }
 
-// export function getTemperaments(){
-//     return async function(dispatch){
-//         try{
-//             let tempers = (await axios.get(`http://localhost:3001/api/temperament`)).data
-//             dispatch({
-//               type: 'GET_TEMPERS',
-//               payload: tempers
-//             })
-//         }catch(err){
-//             console.log(err)
-//         } 
-//     }
-// }

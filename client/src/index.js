@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux'
 import store from './Store';
 import {BrowserRouter} from 'react-router-dom';
-// import axios from 'axios';
-// import dotenv from 'dotenv';
+import axios from 'axios';
+require('dotenv').config();
 
-// dotenv.config();
 
-// axios.defaults.baseURL= process.env.REACT_APP_API || 'http://localhost:3001';
+const {DF_AXIOS,DB_USER} = process.env;
+console.log(process.env)
+console.log(DB_USER)
+axios.defaults.baseURL= process.env.REACT_APP_API || 'http://localhost:3001';
 
 ReactDOM.render(
   <React.StrictMode >
